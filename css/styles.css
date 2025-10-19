@@ -1,0 +1,15 @@
+:root {
+  --main-text-color: #212121;
+  --accent-color: #2196f3;
+  --main-bg-color: #ffffff;
+  --secondary-text-color: #757575;
+  --main-light-color: #f5f4fa;
+  --secondary-light-color: #eeeeee;
+  --tertiary-light-color: #ececec;
+  --tertiary-text-color: #2f303a;
+}
+
+body {
+  font-family: Roboto;
+  color: var(--main-text-color);
+}
