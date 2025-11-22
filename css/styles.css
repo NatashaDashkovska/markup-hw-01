@@ -9,60 +9,139 @@
   --tertiary-text-color: #2f303a;
 }
 
+* {
+  outline: 1px solid tomato;
+}
+
 body {
   font-family: Roboto, Helvetica;
   color: var(--main-text-color);
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* header */
+
+.header-container {
+  display: flex;
+  /* padding-top: 24px;
+  padding-bottom: 25px; */
+}
+
+.navigation {
+  display: flex;
+}
+
 .logo {
+  display: inline-block;
   text-decoration: none;
   color: var(--accent-color);
   font-family: 'Raleway';
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.78px;
+  margin-right: 93px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .logo-span {
   color: #000000;
 }
 
+.nav-list {
+  display: flex;
+}
+
 .nav-link {
-  list-style: none;
+  cursor: pointer;
+}
+
+.nav-link:not(:last-child) {
+  margin-right: 50px;
 }
 
 .nav-link a {
+  display: inline-block;
   text-decoration: none;
   color: inherit;
+  height: 100%;
+  align-content: center;
 }
 
-.nav-link li {
+.nav-list li {
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.28px;
 }
 
-.nav-link li:hover,
-.nav-link li:focus {
+.nav-list li:hover,
+.nav-list li:focus {
   color: var(--accent-color);
 }
 
 .contact-list {
-  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+
+/* .contact-link {
+  align-content: center;
+} */
+
+.contact-link:not(:last-child) {
+  margin-right: 50px;
 }
 
 .contact-list a {
+  display: inline-block;
   text-decoration: none;
   color: var(--secondary-text-color);
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.28px;
+  align-content: center;
+  height: 100%;
 }
 
 .contact-list a:hover,
 .contact-list a:focus {
   color: var(--accent-color);
 }
+
+/* hero */
 
 .hero {
   background-color: #2f303a;
@@ -136,7 +215,7 @@ body {
 .team-position {
   color: var(--secondary-text-color);
   font-size: 16px;
- 
+
   letter-spacing: 0.48px;
 }
 
@@ -165,7 +244,7 @@ body {
 }
 .portfolio-text {
   font-size: 16px;
-    letter-spacing: 0.48px;
+  letter-spacing: 0.48px;
   line-height: 1.88;
 }
 
