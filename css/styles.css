@@ -10,9 +10,9 @@
   --time-function: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* * {
+* {
   outline: 1px solid tomato;
-} */
+}
 
 body {
   font-family: Roboto, Helvetica;
@@ -892,3 +892,5 @@ a {
   margin-left: 124px;
   width: 200px;
 }
+
+

@@ -1,0 +1,77 @@
+@use '../utils/variables';
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.portfolio-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 2;
+
+  margin-bottom: 8px;
+}
+.portfolio-text {
+  font-size: 16px;
+  letter-spacing: 0.48px;
+  line-height: 1.88;
+}
+
+.portfolio-work {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-right: 15px;
+  margin-left: 15px;
+  transition: box-shadow variables.$time-function;
+}
+
+.portfolio-work:hover,
+.portfolio-work:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow variables.$time-function,
+    transform variables.$time-function;
+}
+
+.portfolio-work:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.portfolio-thumb {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.image-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: variables.$main-bg-color;
+  transform: translateY(100%);
+  transition: transform variables.$time-function;
+}
+
+.portfolio-work:hover .portfolio-overlay,
+.portfolio-work:focus .portfolio-overlay {
+  transform: translateY(0);
+  transition: transform variables.$time-function;
+}

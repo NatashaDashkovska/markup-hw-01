@@ -1,0 +1,39 @@
+@use '../utils/variables';
+
+.social-links-list {
+  display: flex;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 16px;
+}
+
+.social-link svg {
+  fill: #afb1b8;
+  width: 20px;
+  height: 20px;
+  transition: fill variables.$time-function;
+}
+
+.social-link {
+  padding: 12px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  transition: background-color variables.$time-function;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: variables.$accent-color;
+  transition: background-color variables.$time-function;
+}
+
+.social-link:hover svg,
+.social-link:focus svg {
+  fill: variables.$main-bg-color;
+  transition: fill variables.$time-function;
+}
+
+.social-link:not(:last-child) {
+  margin-right: 10px;
+}

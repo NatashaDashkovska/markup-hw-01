@@ -1,0 +1,21 @@
+@use '../utils/variables';
+
+.logo {
+  display: inline-block;
+  text-decoration: none;
+  color: variables.$accent-color;
+  font-family: 'Raleway';
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.78px;
+}
+
+.logo-header {
+  margin-right: 93px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.logo-span {
+  color: #000000;
+}

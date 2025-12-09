@@ -1,0 +1,50 @@
+@use '../utils/variables';
+
+.navigation {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link:not(:last-child) {
+  margin-right: 50px;
+}
+
+.nav-link a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  align-content: center;
+}
+
+.nav-list li {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  transition: color variables.$time-function;
+}
+
+.nav-list li:hover,
+.nav-list li:focus {
+  color: variables.$accent-color;
+  transition: color variables.$time-function;
+}
+
+.current::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: variables.$accent-color;
+  /* position: absolute; */
+  margin-top: -3px;
+  margin-bottom: 0;
+  border-radius: 2px;
+}
