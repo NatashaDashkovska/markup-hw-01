@@ -1,48 +1,42 @@
 @use '../utils/variables';
 
-
-.team-section {
+.team__section {
   background-color: variables.$main-light-color;
 }
 
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 1.08px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.team-list {
-  display: flex;
+.team__list {
   margin-right: -15px;
   margin-left: -15px;
+
+  display: flex;
 }
 
-.team-member {
-  flex-basis: calc(100% / 4 - 15px);
+.team__member {
   margin-right: 15px;
   margin-left: 15px;
+
+  flex-basis: calc(100% / 4 - 15px);
+
   background-color: variables.$main-bg-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-name {
+.team__name {
+  margin-bottom: 10px;
+
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.48px;
-  margin-bottom: 10px;
 }
-.team-position {
+.team__position {
   color: variables.$secondary-text-color;
   font-size: 16px;
-
   letter-spacing: 0.48px;
 }
 
-.team-thumb {
+.team__thumb {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;

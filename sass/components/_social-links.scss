@@ -1,39 +1,44 @@
 @use '../utils/variables';
 
-.social-links-list {
-  display: flex;
+.socials__list {
   padding-left: 32px;
   padding-right: 32px;
   margin-top: 16px;
+
+  display: flex;
 }
 
-.social-link svg {
-  fill: #afb1b8;
+.socials__link svg {
   width: 20px;
   height: 20px;
+
+  fill: #afb1b8;
+
   transition: fill variables.$time-function;
 }
 
-.social-link {
+.socials__link {
   padding: 12px;
-  border-radius: 50%;
   width: 44px;
   height: 44px;
+
+  border-radius: 50%;
+
   transition: background-color variables.$time-function;
 }
 
-.social-link:hover,
-.social-link:focus {
+.socials__link:hover,
+.socials__link:focus {
   background-color: variables.$accent-color;
   transition: background-color variables.$time-function;
 }
 
-.social-link:hover svg,
-.social-link:focus svg {
+.socials__link:hover svg,
+.socials__link:focus svg {
   fill: variables.$main-bg-color;
   transition: fill variables.$time-function;
 }
 
-.social-link:not(:last-child) {
+.socials__link:not(:last-child) {
   margin-right: 10px;
 }

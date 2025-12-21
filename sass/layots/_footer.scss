@@ -1,25 +1,27 @@
 @use '../utils/variables';
 
-
 .footer {
-  background-color: variables.$tertiary-text-color;
   padding-top: 60px;
   padding-bottom: 60px;
+
+  background-color: variables.$tertiary-text-color;
 }
 
-.footer-container {
+.footer__container {
   display: flex;
 }
 
-.footer-social-links {
+.footer__socials-list {
+  display: flex;
+  margin-top: 20px;
+}
+
+.footer__socials-links {
   margin-left: 70px;
   margin-top: 12px;
 }
 
-.footer-social-list {
-  display: flex;
-  margin-top: 20px;
-}
+
 
 .social-list-title {
   font-size: 14px;
@@ -29,11 +31,11 @@
   text-transform: uppercase;
 }
 
-.footer-social-list svg {
+.footer__socials-list svg {
   fill: variables.$main-bg-color;
 }
 
-.footer-icon {
+.footer__icon {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -45,7 +47,7 @@
   margin-bottom: 20px;
 }
 
-.address {
+.footer__address {
   color: variables.$main-bg-color;
   font-size: 14px;
   font-weight: 400;

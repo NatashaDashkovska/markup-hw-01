@@ -2,20 +2,30 @@
 
 .logo {
   display: inline-block;
-  text-decoration: none;
+  
   color: variables.$accent-color;
   font-family: 'Raleway';
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.78px;
+
+  text-decoration: none;
 }
 
-.logo-header {
+.logo__header {
   margin-right: 93px;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-.logo-span {
+.logo--span {
   color: #000000;
+}
+
+.footer__logo--span {
+  color: variables.$main-bg-color;
+}
+
+.footer__logo {
+  margin-bottom: 20px;
 }
