@@ -1,19 +1,19 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .navigation {
-  display: flex;
+  @include mixins.flex-center($align: normal);
 }
 
 .navigation__list {
-  display: flex;
+  @include mixins.flex-center($align: normal);
 }
 
 .navigation__item {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.28px;
+  @include mixins.font-settings(14px, 500, 0.28px);
 
-  transition: color variables.$time-function;
+  @include mixins.transition(color);
+
   cursor: pointer;
 }
 
@@ -34,7 +34,7 @@
 .navigation__item:hover,
 .navigation__item:focus {
   color: variables.$accent-color;
-  transition: color variables.$time-function;
+  @include mixins.transition(color);
 }
 
 .navigation__item--current::after {

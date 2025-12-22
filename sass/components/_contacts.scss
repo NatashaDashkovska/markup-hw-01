@@ -1,8 +1,10 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .contacts__list {
   display: flex;
   margin-left: auto;
+  // @include mixins.flex-center($align: center);
 }
 
 .contacts__item:not(:last-child) {
@@ -14,6 +16,7 @@
   padding-bottom: 32px;
 
   display: block;
+  align-items: center;
 
   color: variables.$secondary-text-color;
   font-size: 14px;
@@ -21,15 +24,14 @@
   letter-spacing: 0.28px;
 
   text-decoration: none;
-  transition: color variables.$time-function, fill variables.$time-function;
+  @include mixins.transition(color, fill);
 }
 
 .contacts__link:hover,
 .contacts__link:focus {
   color: variables.$accent-color;
   fill: variables.$accent-color;
-
-  transition: color variables.$time-function, fill variables.$time-function;
+  @include mixins.transition(color, fill);
 }
 
 .contacts__link svg {

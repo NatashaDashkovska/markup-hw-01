@@ -1,0 +1,44 @@
+@use 'sass:math';
+@use 'sass:list';
+@use './variables';
+
+@mixin flex-center($justify: center, $align: center, $gap: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin font-settings($fs, $fw: 400, $lh: normal, $ls: normal) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+@mixin grid-layout($items-per-row, $gap) {
+  display: flex;
+  flex-wrap: wrap;
+  // Використовуємо math.div для відповідності новим стандартам
+  margin: -(math.div($gap, 2));
+
+  & > * {
+    flex-basis: calc(100% / #{$items-per-row} - #{$gap});
+    margin: math.div($gap, 2);
+  }
+}
+
+@mixin transition($properties...) {
+  $transition-list: ();
+  @each $prop in $properties {
+    // Використовуємо list.append замість глобального append
+    $transition-list: list.append(
+      $transition-list,
+      ($prop variables.$time-function),
+      $separator: comma
+    );
+  }
+  transition: $transition-list;
+}
+
+// Використання: @include transition(color, background-color, fill);

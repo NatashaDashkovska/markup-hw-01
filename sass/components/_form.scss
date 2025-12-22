@@ -1,182 +1,142 @@
-// @use '../utils/variables';
+@use '../utils/variables';
+@use '../utils/mixins';
 
-// .footer-form {
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: 93px;
-// }
+.footer__form {
+  margin-left: 93px;
+  display: flex;
+  flex-direction: column;
+}
 
-// .footer-form-label {
-//   font-size: 14px;
-//   font-weight: 700;
-//   letter-spacing: 0.03em;
-//   color: variables.$main-bg-color;
-//   margin-bottom: 20px;
-// }
+.footer__form-label {
+  margin-bottom: 20px;
+  color: variables.$main-bg-color;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
 
-// .footer-input {
-//   padding: 15px 16px;
-//   background-color: variables.$tertiary-text-color;
-//   border: 1px solid secondary-text-color;
-//   width: 358px;
-//   border-radius: 5px;
-//   margin-right: 12px;
-//   color: variables.$main-bg-color;
-// }
+.footer__form-input {
+  margin-right: 12px;
+  padding: 15px 16px;
+  width: 358px;
+  color: variables.$main-bg-color;
+  background-color: variables.$tertiary-text-color;
+  border: 1px solid variables.$secondary-text-color;
+  border-radius: 5px;
+}
 
-// .footer-input:focus-within {
-//   border: 1px solid variables.$secondary-light-color;
-// }
+.footer__form-input:focus-within {
+  border: 1px solid variables.$secondary-light-color;
+}
 
-// .footer-form-btn {
-//   padding: 12px 28px;
-//   background-color: variables.$accent-color;
-//   border-radius: 5px;
-//   border: 1px solid variables.$accent-color;
-//   color: variables.$main-bg-color;
-//   display: inline-flex;
-//   align-items: center;
-// }
+// -----------------------------
 
-// .footer-form-btn > svg {
-//   width: 24px;
-//   height: 24px;
-//   fill: variables.$main-bg-color;
-//   margin-left: 10px;
-// }
+.form {
+  padding: 40px;
+}
 
-// .form {
-//   padding: 40px;
-// }
+.form__header {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: variables.$main-text-color;
+}
 
-// .form-header {
-//   font-size: 20px;
-//   font-weight: 700;
-//   letter-spacing: 0.03em;
-//   color: variables.$main-text-color;
-//   text-align: center;
-//   margin-bottom: 12px;
-// }
+.form__label {
+  position: relative;
 
-// .label {
-//   display: flex;
-//   flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-//   color: variables.$secondary-text-color;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 
-//   font-size: 12px;
-//   font-weight: 400;
-//   letter-spacing: 0.01em;
-//   position: relative;
-// }
+  color: variables.$secondary-text-color;
+}
 
-// .input {
-//   padding: 11px 12px 11px 40px;
-//   border-radius: 5px;
-//   border: 1px solid variables.$secondary-text-color;
-//   margin-top: 4px;
-//   position: relative;
-//   margin-bottom: 10px;
-//   transition: border variables.$time-function;
-// }
+.form__input {
+  padding: 11px 12px 11px 40px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+  position: relative;
 
-// .form-icon {
-//   width: 18px;
-//   height: 18px;
-//   position: absolute;
-//   top: 28px;
-//   left: 12px;
-// }
+  border-radius: 5px;
+  border: 1px solid variables.$secondary-text-color;
+  @include mixins.transition(border);
+}
 
-// .input:focus {
-//   border: 1px solid variables.$accent-color;
-// }
+.form__icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 28px;
+  left: 12px;
+}
 
-// .input:focus-within {
-//   border-image: initial;
-//   outline: 0px;
-// }
+.form__input:focus {
+  border: 1px solid variables.$accent-color;
+}
 
-// .input + svg {
-//   transition: fill variables.$time-function;
-// }
+.form__input:focus-within {
+  border-image: initial;
+  outline: 0px;
+}
 
-// .input:focus + svg {
-//   fill: variables.$accent-color;
-// }
+.form__input + svg {
+  @include mixins.transition(fill);
+}
 
-// .comment {
-//   border: 1px solid variables.$secondary-text-color;
-//   padding: 12px 16px;
-//   margin-top: 4px;
-//   resize: none;
-//   border-radius: 5px;
-//   margin-bottom: 20px;
-//   transition: border variables.$time-function;
-// }
+.form__input:focus + svg {
+  fill: variables.$accent-color;
+}
 
-// .comment:focus-within {
-//   border: 1px solid variables.$accent-color;
-//   border-image: initial;
-//   outline: 0px;
-// }
+.form__comment {
+  padding: 12px 16px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid variables.$secondary-text-color;
+  @include mixins.transition(border);
+}
 
-// .agreement {
-//   font-family: 'Roboto';
-//   font-size: 14px;
-//   font-weight: 400;
-//   line-height: 24px;
-//   letter-spacing: 0.03em;
-//   color: variables.$secondary-text-color;
-//   align-items: center;
-//   display: flex;
-// }
+.form__comment:focus-within {
+  border: 1px solid variables.$accent-color;
+  border-image: initial;
+  outline: 0px;
+}
 
-// .agreement > a {
-//   color: variables.$accent-color;
-//   margin-left: 2px;
-// }
+.form__agreement {
+  @include mixins.flex-center;
 
-// .agreement-icon {
-//   width: 16px;
-//   height: 15px;
-//   outline: 2px solid variables.$main-text-color;
-//   display: inline-block;
-//   margin-right: 9px;
-//   border-radius: 2px;
-// }
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: variables.$secondary-text-color;
+}
 
-// .agreement-input:checked + .agreement-icon {
-//   background-image: url(../images/checked.svg);
+.form__agreement > a {
+  margin-left: 2px;
+  color: variables.$accent-color;
+}
 
-//   background-color: variables.$accent-color;
+.form__agreement-icon {
+  margin-right: 9px;
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  outline: 2px solid variables.$main-text-color;
+  border-radius: 2px;
+}
 
-//   background-repeat: no-repeat;
-
-//   background-position: center;
-//   outline: 2px solid variables.$accent-color;
-// }
-
-// .form-btn {
-//   margin-top: 30px;
-
-//   background-color: variables.$accent-color;
-//   color: variables.$main-bg-color;
-
-//   font-size: 16px;
-//   font-weight: 700;
-
-//   letter-spacing: 0.96px;
-//   line-height: 1.87;
-
-//   cursor: pointer;
-
-//   padding: 10px 52px;
-//   border-radius: 4px;
-//   border: 1px solid variables.$accent-color;
-
-//   text-align: center;
-
-//   margin-left: 124px;
-//   width: 200px;
-// }
+.form__agreement-input:checked + .form__agreement-icon {
+  background-image: url(../images/checked.svg);
+  background-color: variables.$accent-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: 2px solid variables.$accent-color;
+}

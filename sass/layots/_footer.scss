@@ -1,4 +1,5 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .footer {
   padding-top: 60px;
@@ -8,12 +9,12 @@
 }
 
 .footer__container {
-  display: flex;
+  @include mixins.flex-center;
 }
 
 .footer__socials-list {
-  display: flex;
   margin-top: 20px;
+  display: flex;
 }
 
 .footer__socials-links {
@@ -21,13 +22,15 @@
   margin-top: 12px;
 }
 
+.footer__socials-title {
+  // @include mixins.font-settings(14px, 700, 0.03em, uppercase);
 
+  color: variables.$main-bg-color;
 
-.social-list-title {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: variables.$main-bg-color;
+
   text-transform: uppercase;
 }
 
@@ -39,48 +42,40 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-.footer-logo-span {
-  color: variables.$main-bg-color;
-}
-
-.footer-logo {
-  margin-bottom: 20px;
-}
-
 .footer__address {
-  color: variables.$main-bg-color;
+  margin-bottom: 9px;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.42px;
   line-height: 1.71;
+  color: variables.$main-bg-color;
   font-style: normal;
-  margin-bottom: 9px;
   transition: color variables.$time-function;
 }
 
-.footer-contact-list {
+.footer__contacts-list {
   list-style: none;
 }
 
-.footer-contact-list a {
-  text-decoration: none;
-  color: variables.$secondary-text-color;
+.footer__contacts-list a {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.42px;
   line-height: 1.71;
-  display: inline-block;
   transition: color variables.$time-function;
+  text-decoration: none;
 }
 
-.footer-contact:not(:last-child) {
+.footer__contact:not(:last-child) {
   margin-bottom: 9px;
 }
 
-.footer-contact-list a:hover,
-.footer-contact-list a:focus,
-.address:hover,
-.address:focus {
+.footer__contacts-list a:hover,
+.footer__contacts-list a:focus,
+.footer__address:hover,
+.footer__address:focus {
   color: variables.$accent-color;
   transition: color variables.$time-function;
 }

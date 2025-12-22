@@ -1,18 +1,79 @@
-// @use '../utils/variables';
+@use '../utils/variables';
+@use '../utils/mixins';
 
-// .hero-btn {
-//   background-color: variables.$accent-color;
-//   color: variables.$main-bg-color;
+.hero-btn {
+  padding: 10px 32px;
 
-//   font-size: 16px;
-//   font-weight: 700;
+  @include mixins.font-settings(16px, 700, 1.87, 0.96px);
 
-//   letter-spacing: 0.96px;
-//   line-height: 1.87;
+  background-color: variables.$accent-color;
+  color: variables.$main-bg-color;
 
-//   cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid variables.$accent-color;
 
-//   padding: 10px 32px;
-//   border-radius: 4px;
-//   border: 1px solid variables.$accent-color;
-// }
+  cursor: pointer;
+}
+
+.footer__form-btn {
+  padding: 12px 28px;
+  @include mixins.flex-center;
+  display: inline-flex;
+  color: variables.$main-bg-color;
+  background-color: variables.$accent-color;
+  border-radius: 5px;
+  border: 1px solid variables.$accent-color;
+}
+
+.footer__form-btn > svg {
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+  fill: variables.$main-bg-color;
+}
+
+.form__btn {
+  margin-top: 30px;
+  padding: 10px 52px;
+  margin-left: 124px;
+  width: 200px;
+
+  text-align: center;
+
+  @include mixins.font-settings(16px, 700, 1.87, 0.96px);
+
+  background-color: variables.$accent-color;
+  color: variables.$main-bg-color;
+
+  border-radius: 4px;
+  border: 1px solid variables.$accent-color;
+
+  cursor: pointer;
+}
+
+.modal__close-btn svg {
+  height: 16px;
+  width: 16px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  padding: 6px;
+  background-color: variables.$main-bg-color;
+  text-align: center;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  @include mixins.transition(fill);
+  
+}
+
+.modal__close-btn:hover,
+.modal__close-btn:focus {
+  fill: variables.$accent-color;
+}

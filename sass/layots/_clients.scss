@@ -1,4 +1,5 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .clients__list {
   display: flex;
@@ -11,14 +12,14 @@
   height: 92px;
   outline: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: outline variables.$time-function;
+  @include mixins.transition(outline);
 }
 
 .client__logo svg {
   width: 106px;
   height: 60px;
   fill: #afb1b8;
-  transition: fill variables.$time-function;
+  @include mixins.transition(fill);
 }
 
 .client__logo:not(:last-child) {
@@ -28,11 +29,11 @@
 .client__logo:hover,
 .client__logo:focus {
   outline: 1px solid variables.$accent-color;
-  transition: outline variables.$time-function;
+  @include mixins.transition(outline);
 }
 
 .client__logo:hover svg,
 .client__logo:focus svg {
   fill: variables.$accent-color;
-  transition: fill variables.$time-function;
+  @include mixins.transition(fill);
 }

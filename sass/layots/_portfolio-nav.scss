@@ -1,35 +1,37 @@
-// @use '../utils/variables';
+@use '../utils/variables';
+@use '../utils/mixins';
 
-// .button-list {
-//   display: flex;
-//   justify-content: center;
-//   margin-bottom: 50px;
-// }
+.portfolio-nav__list {
+  margin-bottom: 50px;
+  @include mixins.flex-center;
+}
 
-// .portfolio-btn {
-//   background-color: variables.$main-light-color;
-//   font-size: 16px;
-//   font-weight: 500;
-//   letter-spacing: 0.48px;
-//   line-height: 1.62;
-//   cursor: pointer;
-//   padding: 6px 22px;
-//   border: variables.$main-light-color;
-//   border-radius: 4px;
-//   transition: background-color variables.$time-function,
-//     color variables.$time-function, box-shadow variables.$time-function;
-// }
+.portfolio-nav__btn {
+  padding: 6px 22px;
 
-// .portfolio-btn:hover,
-// .portfolio-btn:focus {
-//   background-color: variables.$accent-color;
-//   color: variables.$main-bg-color;
-//   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-//     0px 2px 2px rgba(0, 0, 0, 0.12);
-//   transition: background-color variables.$time-function,
-//     color variables.$time-function, box-shadow variables.$time-function;
-// }
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.48px;
+  line-height: 1.62;
+  background-color: variables.$main-light-color;
 
-// .button-list li:not(:last-child) {
-//   margin-right: 8px;
-// }
+  border: variables.$main-light-color;
+  border-radius: 4px;
+  transition: background-color variables.$time-function,
+    color variables.$time-function, box-shadow variables.$time-function;
+  cursor: pointer;
+}
+
+.portfolio-nav__btn:hover,
+.portfolio-nav__btn:focus {
+  background-color: variables.$accent-color;
+  color: variables.$main-bg-color;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: background-color variables.$time-function,
+    color variables.$time-function, box-shadow variables.$time-function;
+}
+
+.portfolio-nav__item:not(:last-child) {
+  margin-right: 8px;
+}

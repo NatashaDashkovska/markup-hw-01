@@ -1,11 +1,12 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .socials__list {
   padding-left: 32px;
   padding-right: 32px;
   margin-top: 16px;
 
-  display: flex;
+  @include mixins.flex-center;
 }
 
 .socials__link svg {
@@ -13,8 +14,7 @@
   height: 20px;
 
   fill: #afb1b8;
-
-  transition: fill variables.$time-function;
+  @include mixins.transition(fill);
 }
 
 .socials__link {
@@ -23,20 +23,19 @@
   height: 44px;
 
   border-radius: 50%;
-
-  transition: background-color variables.$time-function;
+  @include mixins.transition(background-color);
 }
 
 .socials__link:hover,
 .socials__link:focus {
   background-color: variables.$accent-color;
-  transition: background-color variables.$time-function;
+  @include mixins.transition(background-color);
 }
 
 .socials__link:hover svg,
 .socials__link:focus svg {
   fill: variables.$main-bg-color;
-  transition: fill variables.$time-function;
+  @include mixins.transition(fill);
 }
 
 .socials__link:not(:last-child) {

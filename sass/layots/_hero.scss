@@ -1,4 +1,5 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .hero {
   margin-right: auto;
@@ -6,9 +7,8 @@
   padding: 200px 452px;
   max-width: 1600px;
 
-  display: flex;
+  @include mixins.flex-center;
   flex-wrap: wrap;
-  justify-content: center;
 
   background-color: #2f303a;
   background-image: linear-gradient(
