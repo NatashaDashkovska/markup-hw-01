@@ -81,8 +81,7 @@
     margin-bottom: 10px;
   }
   @include mixins.for-size(desktop) {
-    // display: flex;
-    margin-bottom: 0;
+      margin-bottom: 0;
   }
 }
 

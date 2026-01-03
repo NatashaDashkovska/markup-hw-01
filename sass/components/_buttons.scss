@@ -1,10 +1,8 @@
 @use '../utils/variables';
 @use '../utils/mixins';
 
-
-
 .hero-btn {
-  padding: 10px 32px;
+  padding: 10px 24px;
 
   @include mixins.font-settings(16px, 700, 1.87, 0.96px);
 
@@ -15,6 +13,10 @@
   border: 1px solid variables.$accent-color;
 
   cursor: pointer;
+
+  @include mixins.for-size(desktop) {
+    padding: 10px 32px;
+  }
 }
 
 .footer__form-btn {
@@ -77,4 +79,31 @@
 .modal__close-btn:hover,
 .modal__close-btn:focus {
   fill: variables.$accent-color;
+}
+
+.navigation__button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background-color: variables.$main-bg-color;
+  @include mixins.for-size(tablet) {
+    display: none;
+  }
+}
+
+.js-open-menu {
+  margin-left: auto;
+}
+
+.header__icon {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.js-close-menu {
+  position: absolute;
+  z-index: 999;
+  top: 10px;
+  right: 15px;
 }
