@@ -1,9 +1,74 @@
-.header__container {
-  display: flex;
-  /* padding-top: 24px;
-  padding-bottom: 25px; */
-}
+@use '../utils/variables';
+@use '../utils/mixins';
+
+// .header__container {
+//   display: flex;
+//   /* padding-top: 24px;
+//   padding-bottom: 25px; */
+// }
 
 .header__outline {
   border-bottom: 1px solid #ececec;
+}
+
+// .header__container {
+//   //   padding: 10px 15px;
+//   //   position: relative;
+// }
+
+.is-open {
+  display: none;
+  @include mixins.for-size(tablet) {
+    display: block;
+  }
+}
+
+.js-open-menu[aria-expanded='true'] ~ .js-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  //   display: flex;
+  //   width: 100vw;
+  //   height: 100vh;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: variables.$main-bg-color;
+  // background-color: lightpink;
+  padding: 48px 40px;
+}
+
+.navigation__button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  background-color: variables.$main-bg-color;
+  @include mixins.for-size(tablet) {
+    display: none;
+  }
+}
+
+.js-open-menu {
+  margin-left: auto;
+}
+
+.header__icon {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.js-close-menu {
+  position: absolute;
+  z-index: 999;
+  top: 10px;
+  right: 15px;
+}
+
+.js-menu-container {
+  @include mixins.for-size(tablet) {
+    display: flex;
+    flex-grow: 1;
+  }
 }

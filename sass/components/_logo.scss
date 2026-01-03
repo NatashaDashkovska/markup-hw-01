@@ -1,31 +1,32 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .logo {
-  display: inline-block;
-  
   color: variables.$accent-color;
   font-family: 'Raleway';
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 0.78px;
+  @include mixins.font-settings(24px, 700, normal, 0.03em);
 
-  text-decoration: none;
-}
-
-.logo__header {
-  margin-right: 93px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  @include mixins.for-size(desktop) {
+    @include mixins.font-settings(26px, 700, normal, 0.78px);
+  }
 }
 
 .logo--span {
   color: #000000;
 }
 
-.footer__logo--span {
-  color: variables.$main-bg-color;
+.logo__header {
+  @include mixins.for-size(desktop) {
+    margin-right: 93px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
 
-.footer__logo {
-  margin-bottom: 20px;
-}
+// .footer__logo--span {
+//   color: variables.$main-bg-color;
+// }
+
+// .footer__logo {
+//   margin-bottom: 20px;
+// }

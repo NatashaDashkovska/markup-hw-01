@@ -1,5 +1,6 @@
 @use './utils/variables';
 @use './utils/normalize';
+@use './utils/mixins';
 
 @use './base/common';
 @use './base/container';
@@ -8,20 +9,24 @@
 @use './components/navigation';
 @use './components/logo';
 @use './components/contacts';
-@use './layots/hero';
+// @use './layots/hero';
 @use './components/buttons';
-@use './layots/advantages';
+// @use './layots/advantages';
 
-@use './layots/features';
+// @use './layots/features';
 
-@use './components/social-links';
+// @use './components/social-links';
 
-@use './layots/team';
+// @use './layots/team';
 
-@use './layots/clients';
+// @use './layots/clients';
 
-@use './layots/footer';
+// @use './layots/footer';
 
-@use './components/modal';
+// @use './components/modal';
 
-@use './components/form';
+// @use './components/form';
+
+// * {
+//   outline: 1px solid tomato;
+// }

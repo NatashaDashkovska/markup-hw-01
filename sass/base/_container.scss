@@ -1,8 +1,29 @@
+// .container {
+//   width: 1200px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }
+
+@use '../utils/mixins';
+
 .container {
-  width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-}
 
+  @include mixins.for-size(phone) {
+    width: 480px;
+  }
+
+  @include mixins.for-size(tablet) {
+    width: 768px;
+  }
+
+  @include mixins.for-size(desktop) {
+    width: 1200px;
+  }
+}

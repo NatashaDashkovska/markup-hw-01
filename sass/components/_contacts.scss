@@ -1,43 +1,104 @@
 @use '../utils/variables';
 @use '../utils/mixins';
 
-.contacts__list {
-  display: flex;
-  margin-left: auto;
-  // @include mixins.flex-center($align: center);
-}
+.contacts__link svg {
+  display: none;
+  @include mixins.for-size(tablet) {
+    display: block;
 
-.contacts__item:not(:last-child) {
-  margin-right: 50px;
+    margin-right: 8px;
+    max-height: 14px;
+    max-width: 14px;
+
+    fill: variables.$secondary-text-color;
+  }
+  @include mixins.for-size(desktop) {
+    margin-right: 10px;
+    max-height: 16px;
+    max-width: 16px;
+
+    vertical-align: bottom;
+  }
 }
 
 .contacts__link {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  @include mixins.for-size(tablet) {
+    display: flex;
+  }
 
-  display: block;
-  align-items: center;
+  @include mixins.for-size(desktop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
 
-  color: variables.$secondary-text-color;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.28px;
+    align-items: center;
 
-  text-decoration: none;
-  @include mixins.transition(color, fill);
+    color: variables.$secondary-text-color;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.28px;
+
+    text-decoration: none;
+    @include mixins.transition(color, fill);
+  }
 }
 
 .contacts__link:hover,
-.contacts__link:focus {
+.contacts__link:focus,
+.contacts__link:hover svg,
+.contacts__link:focus svg {
   color: variables.$accent-color;
   fill: variables.$accent-color;
   @include mixins.transition(color, fill);
 }
 
-.contacts__link svg {
-  margin-right: 10px;
-  max-height: 16px;
-  max-width: 16px;
+.contacts__list {
+  margin-top: 50%;
 
-  vertical-align: bottom;
+  @include mixins.for-size(tablet) {
+    margin-top: 0;
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  @include mixins.for-size(desktop) {
+    flex-direction: row-reverse;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0px;
+  }
+}
+
+.contacts__item {
+  @include mixins.font-settings(24px, 500, normal, 0.02em);
+
+  color: variables.$secondary-text-color;
+
+  @include mixins.for-size(tablet) {
+    @include mixins.font-settings(12px, 500, normal, 0.02em);
+    margin-bottom: 10px;
+  }
+  @include mixins.for-size(desktop) {
+    // display: flex;
+    margin-bottom: 0;
+  }
+}
+
+.contacts__item:not(:last-child) {
+  @include mixins.font-settings(34px, 500, normal, 0.02em);
+
+  color: variables.$accent-color;
+  margin-bottom: 32px;
+
+  @include mixins.for-size(tablet) {
+    @include mixins.font-settings(12px, 500, normal, 0.02em);
+    margin-bottom: 0;
+    color: variables.$secondary-text-color;
+  }
+
+  @include mixins.for-size(desktop) {
+    margin-left: 30px;
+  }
 }

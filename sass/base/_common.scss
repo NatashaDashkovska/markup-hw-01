@@ -3,6 +3,7 @@
 body {
   font-family: Roboto, Helvetica;
   color: variables.$main-text-color;
+  background-color: variables.$main-bg-color;
 }
 
 p,
@@ -30,6 +31,8 @@ ul {
 
 a {
   cursor: pointer;
+  color: currentColor;
+  text-decoration: none;
 }
 
 .visually-hidden {
@@ -44,4 +47,3 @@ a {
   clip-path: inset(50%);
   margin: -1px;
 }
-
