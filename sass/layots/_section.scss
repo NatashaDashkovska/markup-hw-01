@@ -1,13 +1,21 @@
-// .section {
-//   padding-top: 94px;
-//   padding-bottom: 94px;
-// }
+@use '../utils/mixins';
 
-// .section__title {
-//   margin-bottom: 50px;
-//   text-align: center;
+.section {
+  padding-bottom: 60px;
+  padding-top: 60px;
+  @include mixins.for-size(desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
 
-//   font-size: 36px;
-//   font-weight: 700;
-//   letter-spacing: 1.08px;
-// }
+.section__title {
+  @include mixins.font-settings(28px, 700, normal, 0.03em);
+  margin-bottom: 30px;
+  text-align: center;
+
+  @include mixins.for-size(desktop) {
+    margin-bottom: 50;
+    @include mixins.font-settings(36px, 700, normal, 1.08px);
+  }
+}

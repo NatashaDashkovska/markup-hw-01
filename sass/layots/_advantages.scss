@@ -2,32 +2,28 @@
 @use '../utils/mixins';
 
 .advantages__list {
-  @include mixins.grid-layout(4, 30px);
+  @include mixins.for-size(tablet) {
+    @include mixins.grid-layout(2, 30px);
+  }
+  @include mixins.for-size(desktop) {
+    @include mixins.grid-layout(4, 30px);
+  }
 }
 
-// .advantages__item {
-//   margin-right: 15px;
-//   margin-left: 15px;
-
-//   flex-basis: calc(100% / 4 - 15px);
-// }
-
-.advantages__title {
+.advantages__item:not(:first-child) {
   margin-top: 30px;
-
-  // @include mixins.font-settings(14px, 700, 0.42px);
-
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.42px;
+  @include mixins.for-size(tablet) {
+    margin-top: 15px;
+  }
 }
+
 .advantages__text {
   margin-top: 10px;
 
   color: variables.$secondary-text-color;
-  font-size: 14px;
-  letter-spacing: 0.42px;
-  line-height: 1.71;
+  
+
+  @include mixins.font-settings(14px, 400, 1.71, 0.03em);
 }
 
 .advantages__item svg {
@@ -36,7 +32,25 @@
 }
 
 .advantages__icon {
-  padding: 25px 100px;
+  padding: 25px 190px;
 
   background-color: variables.$main-light-color;
+  @include mixins.for-size(tablet) {
+    padding: 25px 142px;
+  }
+  @include mixins.for-size(desktop) {
+    padding: 25px 100px;
+  }
+}
+
+.advantages__title {
+  margin-top: 30px;
+
+  @include mixins.font-settings(14px, 700, normal, 0.03em);
+  text-align: center;
+
+  @include mixins.for-size(tablet) {
+    text-align: start;
+  }
+ 
 }

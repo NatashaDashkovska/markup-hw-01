@@ -11,9 +11,9 @@
 @use './components/contacts';
 @use './layots/hero';
 @use './components/buttons';
-// @use './layots/advantages';
+@use './layots/advantages';
 
-// @use './layots/features';
+@use './layots/features';
 
 // @use './components/social-links';
 
@@ -27,6 +27,6 @@
 
 // @use './components/form';
 
-// * {
-//   outline: 1px solid tomato;
-// }
+* {
+  outline: 1px solid tomato;
+}

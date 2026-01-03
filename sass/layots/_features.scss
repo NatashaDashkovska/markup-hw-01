@@ -1,7 +1,13 @@
 @use '../utils/variables';
+@use '../utils/mixins';
 
 .features__container {
-  padding-top: 0;
+  display: none;
+
+  @include mixins.for-size(desktop) {
+    display: block;
+    padding-top: 0;
+  }
 }
 
 .features__list {
