@@ -6,7 +6,12 @@
 }
 
 .team__list {
-  @include mixins.grid-layout(4, 30px);
+  @include mixins.for-size(tablet) {
+    @include mixins.grid-layout(2, 30px);
+  }
+  @include mixins.for-size(desktop) {
+    @include mixins.grid-layout(4, 30px);
+  }
 }
 
 .team__member {
@@ -16,21 +21,29 @@
   border-radius: 0px 0px 4px 4px;
 }
 
+.team__member:not(:last-child) {
+  margin-bottom: 30px;
+  @include mixins.for-size(tablet) {
+    margin-bottom: 15px;
+  }
+}
+
 .team__name {
   margin-bottom: 10px;
-  // @include mixins.font-settings(16px, 500, 0.48px);
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.48px;
+  @include mixins.font-settings(16px, 500, normal, 0.48px);
 }
+
 .team__position {
   color: variables.$secondary-text-color;
-  font-size: 16px;
-  letter-spacing: 0.48px;
+  @include mixins.font-settings(16px, 400, normal, 0.03em);
 }
 
 .team__thumb {
   padding-top: 30px;
-  padding-bottom: 30px;
   text-align: center;
+  padding-bottom: 24px;
+
+  @include mixins.for-size(desktop) {
+    padding-bottom: 30px;
+  }
 }
