@@ -2,17 +2,23 @@
 @use '../utils/mixins';
 
 .portfolio-nav__list {
-  margin-bottom: 50px;
-  @include mixins.flex-center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mixins.for-size(tablet) {
+    margin-bottom: 30px;
+    @include mixins.flex-center;
+  }
+
+  @include mixins.for-size(desktop) {
+    margin-bottom: 50px;
+  }
 }
 
 .portfolio-nav__btn {
   padding: 6px 22px;
-
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.48px;
-  line-height: 1.62;
+  @include mixins.font-settings(16px, 500, 1.62, 0.48px);
   background-color: variables.$main-light-color;
 
   border: variables.$main-light-color;
@@ -20,6 +26,8 @@
   transition: background-color variables.$time-function,
     color variables.$time-function, box-shadow variables.$time-function;
   cursor: pointer;
+
+  margin-bottom: 15px;
 }
 
 .portfolio-nav__btn:hover,

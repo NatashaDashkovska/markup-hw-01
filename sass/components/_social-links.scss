@@ -18,9 +18,12 @@
 }
 
 .socials__link {
-  padding: 12px;
   width: 44px;
   height: 44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 50%;
   @include mixins.transition(background-color);
