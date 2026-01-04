@@ -20,27 +20,45 @@
 }
 
 .footer__form-btn {
-  padding: 12px 28px;
+  padding: 10px 30px;
+
   @include mixins.flex-center;
   display: inline-flex;
   color: variables.$main-bg-color;
   background-color: variables.$accent-color;
   border-radius: 5px;
   border: 1px solid variables.$accent-color;
+  @include mixins.font-settings(16px, 700, 1.87, 0.06em);
+
+  @include mixins.for-size(tablet) {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mixins.for-size(desktop) {
+    padding: 10px 28px;
+  }
 }
 
 .footer__form-btn > svg {
-  margin-left: 10px;
+  margin-left: 12px;
   width: 24px;
   height: 24px;
   fill: variables.$main-bg-color;
+
+  @include mixins.for-size(desktop) {
+    margin-left: 10px;
+  }
 }
 
 .form__btn {
   margin-top: 30px;
   padding: 10px 52px;
-  margin-left: 124px;
+  margin-left: auto;
+  margin-right: auto;
   width: 200px;
+  display: block;
 
   text-align: center;
 

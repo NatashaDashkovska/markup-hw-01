@@ -23,10 +23,14 @@
   }
 }
 
-// .footer__logo--span {
-//   color: variables.$main-bg-color;
-// }
+.footer__logo--span {
+  color: variables.$main-bg-color;
+}
 
-// .footer__logo {
-//   margin-bottom: 20px;
-// }
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 20px;
+  @include mixins.for-size(desktop) {
+    margin-bottom: 20px;
+  }
+}

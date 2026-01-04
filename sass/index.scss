@@ -19,13 +19,13 @@
 
 @use './layots/team';
 
-// @use './layots/clients';
+@use './layots/clients';
 
-// @use './layots/footer';
+@use './layots/footer';
 
-// @use './components/modal';
+@use './components/modal';
 
-// @use './components/form';
+@use './components/form';
 
 * {
   outline: 1px solid tomato;

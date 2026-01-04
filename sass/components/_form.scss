@@ -2,27 +2,61 @@
 @use '../utils/mixins';
 
 .footer__form {
-  margin-left: 93px;
-  display: flex;
-  flex-direction: column;
+  @include mixins.for-size(desktop) {
+    margin-left: 93px;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 12px;
+  }
 }
 
 .footer__form-label {
+  display: inline-block;
   margin-bottom: 20px;
   color: variables.$main-bg-color;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  @include mixins.font-settings(14px, 700, normal, 0.03em);
+
+  @include mixins.for-size(desktop) {
+    margin-bottom: 20px;
+    text-align: start;
+  }
+}
+
+.footer__form-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include mixins.for-size(tablet) {
+    flex-direction: column;
+  }
+  @include mixins.for-size(desktop) {
+    display: block;
+  }
 }
 
 .footer__form-input {
-  margin-right: 12px;
   padding: 15px 16px;
-  width: 358px;
+  width: 100%;
+  margin-bottom: 20px;
   color: variables.$main-bg-color;
   background-color: variables.$tertiary-text-color;
   border: 1px solid variables.$secondary-text-color;
   border-radius: 5px;
+
+  @include mixins.for-size(tablet) {
+    width: 450px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include mixins.for-size(desktop) {
+    margin-right: 12px;
+    margin-bottom: 0;
+    width: 358px;
+  }
 }
 
 .footer__form-input:focus-within {
@@ -38,10 +72,12 @@
 .form__header {
   margin-bottom: 12px;
   text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  @include mixins.font-settings(20px, 700, 1.5, 0.03em);
   color: variables.$main-text-color;
+
+  @include mixins.for-size(desktop) {
+    @include mixins.font-settings(20px, 700, normal, 0.03em);
+  }
 }
 
 .form__label {
@@ -111,17 +147,19 @@
 
 .form__agreement {
   @include mixins.flex-center;
+  @include mixins.font-settings(12px, 400, 1.16, 0.03em);
 
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.03em;
   color: variables.$secondary-text-color;
+
+  @include mixins.for-size(desktop) {
+    @include mixins.font-settings(14px, 400, 1.71, 0.03em);
+  }
 }
 
 .form__agreement > a {
   margin-left: 2px;
   color: variables.$accent-color;
+  text-decoration: underline;
 }
 
 .form__agreement-icon {

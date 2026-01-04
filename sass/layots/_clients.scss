@@ -2,17 +2,35 @@
 @use '../utils/mixins';
 
 .clients__list {
-  display: flex;
-  margin-top: 50px;
+  @include mixins.grid-layout(1, 15px);
+  @include mixins.for-size(phone) {
+    @include mixins.grid-layout(2, 15px);
+  }
+
+  @include mixins.for-size(tablet) {
+    @include mixins.grid-layout(3, 15px);
+  }
+
+  @include mixins.for-size(desktop) {
+    margin-top: 50px;
+    @include mixins.grid-layout(6, 15px);
+  }
 }
 
 .client__logo {
-  padding: 16px 32px;
+  padding: 16px 52px;
   width: 100%;
-  height: 92px;
+  text-align: center;
+
   outline: 1px solid #afb1b8;
   border-radius: 4px;
   @include mixins.transition(outline);
+
+  @include mixins.for-size(desktop) {
+    padding: 16px 32px;
+    width: 100%;
+    height: 92px;
+  }
 }
 
 .client__logo svg {
@@ -22,9 +40,7 @@
   @include mixins.transition(fill);
 }
 
-.client__logo:not(:last-child) {
-  margin-right: 30px;
-}
+
 
 .client__logo:hover,
 .client__logo:focus {

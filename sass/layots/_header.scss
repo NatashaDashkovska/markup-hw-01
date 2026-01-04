@@ -24,8 +24,6 @@
   background-color: variables.$main-bg-color;
 }
 
-
-
 .js-menu-container {
   @include mixins.for-size(tablet) {
     display: flex;

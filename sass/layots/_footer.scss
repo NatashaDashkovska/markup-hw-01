@@ -4,34 +4,75 @@
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
-
   background-color: variables.$tertiary-text-color;
+  text-align: center;
+  @include mixins.for-size(tablet) {
+  }
+  @include mixins.for-size(desktop) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.footer__text-block {
+  @include mixins.for-size(tablet) {
+    display: flex;
+    padding-left: 61px;
+    padding-right: 74px;
+  }
+
+  @include mixins.for-size(desktop) {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: start;
+  }
 }
 
 .footer__container {
-  @include mixins.flex-center;
+  @include mixins.for-size(desktop) {
+    display: flex;
+  }
 }
 
 .footer__socials-list {
-  margin-top: 20px;
   display: flex;
+  justify-content: center;
+
+  @include mixins.for-size(desktop) {
+    margin-top: 20px;
+    justify-content: start;
+  }
 }
 
 .footer__socials-links {
-  margin-left: 70px;
-  margin-top: 12px;
+  text-align: center;
+
+  margin-bottom: 60px;
+
+  @include mixins.for-size(tablet) {
+    margin-left: auto;
+    margin-top: 5px;
+  }
+  @include mixins.for-size(desktop) {
+    margin-left: 70px;
+    margin-top: 12px;
+  }
 }
 
 .footer__socials-title {
-  // @include mixins.font-settings(14px, 700, 0.03em, uppercase);
-
+  @include mixins.font-settings(14px, 700, normal, 0.03em);
+  text-align: center;
   color: variables.$main-bg-color;
-
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-
   text-transform: uppercase;
+
+  margin-bottom: 20px;
+
+  @include mixins.for-size(desktop) {
+    text-align: start;
+    @include mixins.font-settings(14px, 700, normal, 0.03em);
+  }
 }
 
 .footer__socials-list svg {
@@ -43,33 +84,33 @@
 }
 
 .footer__address {
-  margin-bottom: 9px;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.42px;
-  line-height: 1.71;
+  margin-bottom: 8px;
+  @include mixins.font-settings(14px, 400, 1.71, 0.42px);
   color: variables.$main-bg-color;
   font-style: normal;
   transition: color variables.$time-function;
+  @include mixins.for-size(desktop) {
+    margin-bottom: 9px;
+  }
 }
 
 .footer__contacts-list {
-  list-style: none;
+  margin-bottom: 60px;
 }
 
 .footer__contacts-list a {
   display: inline-block;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.42px;
-  line-height: 1.71;
+  @include mixins.font-settings(14px, 400, 1.71, 0.42px);
   transition: color variables.$time-function;
   text-decoration: none;
 }
 
 .footer__contact:not(:last-child) {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
+  @include mixins.for-size(desktop) {
+    margin-bottom: 9px;
+  }
 }
 
 .footer__contacts-list a:hover,
